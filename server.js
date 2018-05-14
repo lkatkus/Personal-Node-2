@@ -47,11 +47,15 @@ const app = express();
 
 // Setting routes
     app.get('/',(req, res) => {
-        res.render('index',{ pageName: 'Home page', welcomeMsg: 'Welcome YOW' })
+        res.render('index',{ pageName: 'Home page', welcomeMsg: 'Home route' })
     });
 
     app.get('/about',(req, res) => {
-        res.render('about.hbs', { pageName: 'About page'});
+        res.render('about.hbs', { pageName: 'About page', welcomeMsg: 'About route'});
+    });
+
+    app.get('/projects',(req, res) => {
+        res.render('projects.hbs', { pageName: 'About page', welcomeMsg: 'Projects route'});
     });
 
     app.get('/bad',(req, res) => {
