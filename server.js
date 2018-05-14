@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// For Heroku deployement
+const PORT =  process.env.PORT || 3000;
+
 // Create express app
 const app = express();
 
@@ -56,6 +59,6 @@ const app = express();
     })
 
 // Binding app to port and starting server
-app.listen(3000,() => {
-    console.log('Server started!');
+app.listen(PORT,() => {
+    console.log(`Server started at port ${PORT}`);
 });
